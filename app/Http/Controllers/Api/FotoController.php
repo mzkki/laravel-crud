@@ -18,7 +18,7 @@ class FotoController extends Controller
      */
     public function index()
     {
-        $fotos = Foto::all();
+        $fotos = Foto::with('album')->get();
         try {
             if (!$fotos) {
                 throw new Exception();

@@ -34,11 +34,9 @@ Route::group([
 });
 
 Route::middleware(['auth:api'])->group(function () {
-    Route::get('/albums', [AlbumController::class, 'index']);
 });
 
-// Route::resource('albums', AlbumController::class);
-// Route::get('/albums', [AlbumController::class, 'index']);
+Route::get('/albums', [AlbumController::class, 'index']);
 Route::post('/albums/store', [AlbumController::class, 'store']);
 Route::get('/album/{id}', [AlbumController::class, 'show']);
 Route::put('/album/{id}/update', [AlbumController::class, 'update']);
